@@ -1,0 +1,27 @@
+const { Client, GatewayIntentBits } = require('discord.js');
+
+const client = new Client({
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.MessageContent
+  ]
+});
+
+client.on('messageCreate', message => {
+  if (message.content === '!regulamin') {
+    message.channel.send(`
+REGULAMIN SKLEPU
+
+1. Zakazuje się scammowania, oszukiwania.
+2. Brak zwrotów po zakupie.
+3. Spamowanie jest zabronione.
+4. Zakup = akceptacja regulaminu.
+⬇
+Naruszenie zasad = kara.
+    `);
+  }
+});
+
+client.login('6674212910ae8cba483d660ec4965ee7f491b08e6a99ac412ca765413fca25f5
+');
